@@ -11,6 +11,7 @@ var PORT = process.env.PORT || 3000
 //var todoNextId = 1;
 app.use(bodyParser.json());
 
+//root dir
 app.get('/', function (req, res) {
     res.send('TODO API Root');
 });
