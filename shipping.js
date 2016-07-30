@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 //root dir
 app.get('/', function (req, res) {
-    res.send('TODO API Root');
+    res.send('TODO API Root for shipping app');
 });
 
 
