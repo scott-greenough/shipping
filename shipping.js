@@ -23,10 +23,18 @@ app.get('/fedex/:id', function (req, res) {
         if (!error && response.statusCode == 200){
             var temp = JSON.parse(body);
 
+            var status_date
+            if (temp.tracking_status != null && temp.tracking_status.status_date != null) {
+                status_date = temp.tracking_status.status_date
+
+            var status_details
+            if (temp.tracking_status != null && temp.tracking_status.status_details != null) {
+                status_details = temp.tracking_status.status_details
+
             var status = {
                 carrier: temp.carrier,
-                date: temp.tracking_status.status_date,
-                details: temp.tracking_status.status_details
+                date: status_date,
+                details: status_details
             }
 
             res.json(status);
