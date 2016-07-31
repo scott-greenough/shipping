@@ -26,11 +26,13 @@ app.get('/fedex/:id', function (req, res) {
             var status_date
             if (temp.tracking_status != null && temp.tracking_status.status_date != null) {
                 status_date = temp.tracking_status.status_date
-
+            }
+            
             var status_details
             if (temp.tracking_status != null && temp.tracking_status.status_details != null) {
                 status_details = temp.tracking_status.status_details
-
+            }
+            
             var status = {
                 carrier: temp.carrier,
                 date: status_date,
